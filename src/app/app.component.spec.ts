@@ -20,10 +20,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('firstprogram');
   });
 
-  it('should render title', () => {
+  it('should render user names', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, firstprogram');
+    // Adjust this to match a user from your service
+    expect(compiled.textContent).toContain('Alice');
   });
 });
