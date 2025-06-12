@@ -1,8 +1,20 @@
-<div class="card">
-  <h2>User Profile</h2>
-  <img [src]="profilePic" alt="User Profile Picture" [class.online]="isOnLine">
-  <p>Name: <strong>{{ userName }}</strong></p>
-  <p>Age: {{ userAge }}</p>
-  <p>Status: {{ isOnLine ? 'Online' : 'Offline' }}</p>
-  <button (click)="toggleOnlineStatus()" >Send Message</button>
-</div>
+
+<div>
+<h2>Enter Your Name</h2>
+<input type="text" placeholder="Enter text" #e value="abc@gmail.com">
+<br>
+<h2>Enter Your Subject</h2>
+<input type="text" placeholder="Enter subject" #s value="Angular"> 
+ <br>
+<h2>Enter Your first Score</h2>
+<input type="number" placeholder="Enter score" #n value=0>
+<br>
+<h2>Enter Your second Score</h2>
+<input type="number" placeholder="Enter score" #a value=0>
+ <div >
+     <button (click)="onclick(e.value,s.value,+n.value,+a.value)"  >Click Here</button>
+
+<h1 *ngIf="statement" > Hello {{email}} ! Your Score in {{subject}} is {{scoreSecond + scoreOne}}</h1>
+
+ </div>
+ </div>
