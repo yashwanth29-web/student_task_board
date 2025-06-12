@@ -1,0 +1,21 @@
+ <input type="text" [(ngModel)]="name" placeholder="Enter your name" />
+ <br/>
+ <input type="text" [(ngModel)]="grade" placeholder="Enter your Grade" />
+ <br/> 
+ <button (click)="addUser(name, grade)">Add User</button>
+ <ul >
+    
+  <li *ngFor="let l of list" >
+    <p [ngSwitch]="l.grade">
+       
+<span *ngSwitchCase="'A'" style="color: green;"> {{l.name}} - Grade . A Excellent </span>
+<span *ngSwitchCase="'B'" style="color: yellow;"> {{l.name}} - Grade . B Good </span>
+<span *ngSwitchCase="'C'" style="color: red;"> {{l.name}} - Grade . C Average </span>
+<span *ngSwitchDefault style="color: gray;"> {{l.name}} - Grade . F Not Graded </span>
+
+    </p>
+    
+  </li>
+  <p *ngIf="showError" style="color: red">Nothing is entered</p>
+ </ul>
+
