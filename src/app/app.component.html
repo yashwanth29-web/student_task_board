@@ -1,23 +1,33 @@
-<h2>Student List</h2>
-<ul>
-  <li *ngFor="let student of students">
-    {{ student.name }} - Grade: {{ student.grade }}
-  </li>
-</ul>
+<!-- Application Form Example -->
+<div>
+  <h2>Enter Your Details</h2>
+  <input
+    type="text"
+    placeholder="Enter your Name"
+    #e
+  ><br>
 
+  <input
+    type="text"
+    placeholder="Enter subject"
+    #s
+  ><br>
 
-<h3>Add Student</h3>
-<input
-  type="text"
-  placeholder="Student Name"
-  [(ngModel)]="studentName"
-  #nameInput
-><br>
-  
-<input
-  type="text"
-  placeholder="Student Grade"
-  [(ngModel)]="studentGrade"
-  #gradeInput
-><br>
-<button (click)="addStudent(nameInput, gradeInput)">Add Student</button>
+  <input
+    type="number"
+    placeholder="Enter your first score"
+    #n
+  ><br>
+  <input
+    type="number"
+    placeholder="Enter your second score"
+    #a 
+  >
+
+  <button (click)="onclick(e.value, s.value, +n.value,+a.value)">Submit</button>
+
+  <h1  *ngIf="statement">
+    Hello {{email}}! Your Score in {{subject}} is {{scoreOne+scoreTwo}}.
+  </h1>
+
+</div>
