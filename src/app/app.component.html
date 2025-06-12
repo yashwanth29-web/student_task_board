@@ -1,20 +1,23 @@
+<h2>Student List</h2>
+<ul>
+  <li *ngFor="let student of students">
+    {{ student.name }} - Grade: {{ student.grade }}
+  </li>
+</ul>
 
-<div>
-<h2>Enter Your Name</h2>
-<input type="text" placeholder="Enter text" #e value="abc@gmail.com">
-<br>
-<h2>Enter Your Subject</h2>
-<input type="text" placeholder="Enter subject" #s value="Angular"> 
- <br>
-<h2>Enter Your first Score</h2>
-<input type="number" placeholder="Enter score" #n value=0>
-<br>
-<h2>Enter Your second Score</h2>
-<input type="number" placeholder="Enter score" #a value=0>
- <div >
-     <button (click)="onclick(e.value,s.value,+n.value,+a.value)"  >Click Here</button>
 
-<h1 *ngIf="statement" > Hello {{email}} ! Your Score in {{subject}} is {{scoreSecond + scoreOne}}</h1>
-
- </div>
- </div>
+<h3>Add Student</h3>
+<input
+  type="text"
+  placeholder="Student Name"
+  [(ngModel)]="studentName"
+  #nameInput
+><br>
+  
+<input
+  type="text"
+  placeholder="Student Grade"
+  [(ngModel)]="studentGrade"
+  #gradeInput
+><br>
+<button (click)="addStudent(nameInput, gradeInput)">Add Student</button>
