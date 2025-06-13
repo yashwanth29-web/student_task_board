@@ -12,6 +12,22 @@ input[type="text"]:focus {
   box-shadow: 0 0 8px #007bff77;
   outline: none;
 }
+.high {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.low {
+  color: green;
+}
+
+.completed span {
+  text-decoration: line-through;
+}
+
 
 /* Button Styling */
 button {
